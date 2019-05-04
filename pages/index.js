@@ -39,7 +39,7 @@ class JsonparserIndex extends Component {
                 <Grid>
                     <Grid.Column width={7} >
                     <Form fluid>
-                        <TextArea placeholder='Paste your json here!' onChange={this.handleChange} style={{ minHeight: 600, 'padding-left':'15px' }} />
+                        <TextArea placeholder='Paste your json here!' onChange={this.handleChange} style={{ minHeight: 600, 'margin-left':'25px' }} />
                     </Form>
                     </Grid.Column>
 

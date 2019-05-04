@@ -15,7 +15,7 @@ export default props => {
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"
                 />
-                <link rel="shortcut icon" href="./favicon.ico" />
+                <link rel="shortcut icon" href="../favicon.ico" />
                 <title>🚀 Rocket Json Parser</title>
             </Head>
 
