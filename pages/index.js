@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextArea, Grid, Form } from "semantic-ui-react";
 import Layout from "../components/Layout";
+import Highlight from 'react-highlight'
 const JSON5 = require('json5');
 
 //Array for sorting options
@@ -21,12 +22,12 @@ class JsonparserIndex extends Component {
 
    getJSON(){
     try {
-        var parsed = JSON5.parse(this.state.jsonvalue,null,10);
-        var plainjson = JSON.stringify(parsed, undefined, 10);
+        var parsed = JSON5.parse(this.state.jsonvalue,null,6);
+        var plainjson = JSON.stringify(parsed, undefined, 6);
         return plainjson;
     } catch (error) {
         if(this.state.jsonvalue.length<1){
-            return '';
+            return 'Parsed Json will appear here!';
         }
         return `Error: ${error}`;
     }
@@ -43,11 +44,13 @@ class JsonparserIndex extends Component {
                     </Form>
                     </Grid.Column>
 
-                    <Grid.Column width={8} >
-                    <Form fluid>
-                        <TextArea placeholder='Parsed Json output will appear here!' style={{ minHeight: 600, 'margin-left':'10px' }} 
-                        value={this.state.jsonvalue!=null?this.getJSON():""}/>
-                    </Form>
+                    <Grid.Column width={8} style={{ minHeight: 600, 'margin-left':'25px', 'margin-top': '15px', background: 'black' }}>
+                   
+                   <Highlight className='javascript'>
+                    {this.state.jsonvalue!=null?this.getJSON():"Parsed Json output will appear here!"}  
+                    </Highlight>
+       
+     
                     </Grid.Column>
                 
                 </Grid>
